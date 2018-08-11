@@ -1,0 +1,17 @@
+<div class="art-wrapper">
+ <div class="container-common">
+   <% @topics.each do |topic| %>
+   <div class="row">
+     <div class="col-md-4">
+
+     <h3 class="topic-common">
+      <%= topic.title %>
+    </h3>
+     <p class="topic-common">
+      <%= topic.description %>
+     </p>
+     </div>
+   </div>
+       <%end%>
+  </div>
+</div>

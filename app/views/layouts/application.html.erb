@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>IdeaHub</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
+    <% end %>
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-transparent">
+      <div class="container navbar-container">
+        <%= link_to topics_path do %>
+          <span>home</span>
+        <% end %>
+        <%= link_to pages_about_path do %>
+          <span>About</span>
+        <% end %>
+
+        <ul class="nav navbar-nav navbar-right">
+          <% if logged_in? %>
+            <li>
+              <%= link_to '#' do %>
+                <span>コミュニティー</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_topic_path do %>
+                <span>アイデアを投稿する</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to collections_path do %>
+                <span>アイデアを募集する</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to logout_path, method: :delete do %>
+                <span>ログアウト</span>
+              <% end %>
+            </li>
+          <ul class="nav navbar-nav navbar-left-middle">
+            <li>
+              <%= link_to categories_recommend_path do %>
+                <span>おすすめ</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_business_path do %>
+                <span>ビジネスアイデア</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_life_path do %>
+                <span>生活アイデア</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_planning_path do %>
+                <span>企画職の方向け</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_technology_path do %>
+                <span>テクノロジー</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_art_path do %>
+                <span>アート</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_event_path do %>
+                <span>エンタメ・イベント</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to categories_hobby_path do %>
+                <span>遊び</span>
+              <% end %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to new_user_path do %>
+                <span>新規登録</span>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to login_path do %>
+                <span>ログイン</span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    　</div>
+    </nav>
+
+    <%= yield %>
+
+      <script>
+        $(function(){
+          $(".alert").fadeOut(5000);
+        });
+      </script>
+
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<div class="collection-wrapper">
+ <div class="container-common">
+
+   <div class="row">
+     <div class="col-md-6 col-md-offset-3">
+       <%= link_to new_collection_path %>
+       <h3>アイデアを募集する</h3>
+
+   <% @collections.each do |collection| %>
+   <div class="row">
+     <div class="col-md-4">
+     <h3 class="collection-common">
+      <%= collection.title %>
+     </h3>
+     <p class="collection-common">
+      <%= link_to collection.text, collection_path(collection.id) %>
+     </p>
+     </div>
+   </div>
+       <%end%>
+  </div>
+</div>

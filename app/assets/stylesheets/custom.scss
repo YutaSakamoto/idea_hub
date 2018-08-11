@@ -1,0 +1,102 @@
+h1, h2 {
+  font-weight: 100;
+}
+
+.text-white {
+  color: black;
+}
+
+.btn-white {
+  color: black;
+  border: 1px solid #fff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0.0);
+
+  &:hover {
+    color: black;
+  }
+}
+
+/* pages/top */
+.top-hero-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: blue;
+}
+
+.top-hero-container {
+  padding-top: 220px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+
+h2 {
+  margin-bottom: 60px;
+  }
+}
+
+/* topic関連 */
+.topic-index-container {
+  padding-top: 180px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+
+h2 {
+  margin-bottom: 60px;
+  }
+}
+
+.form-group {
+  width: 500px;
+  box-sizing: 300px;
+}
+
+.topic-index-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* navbar関連 */
+.navbar-transparent {
+  height:130px;
+  background-color: rgba(0,0,0,0.2);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Users index */
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+  overflow: auto;
+  border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+/* Session 関連 */
+.container-common {
+  padding-top: 220px;
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+
+h2 {
+  margin-bottom: 60px;
+  }
+}
+
+/* Recommend 関連 */
+.topic-common {
+  padding-left: 80px;
+}

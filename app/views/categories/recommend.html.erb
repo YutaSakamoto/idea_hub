@@ -1,0 +1,19 @@
+<div class="recommend-wrapper">
+  <div class="container-common">
+    <% @topics.each do |topic| %>
+    <div class="row">
+      <div class="col-md-4">
+
+      <h3 class="topic-common">
+       <%= topic.title %>
+     </h3>
+      <p class="topic-common">
+       <%= link_to topic.description, topic_path(topic.id) %>
+      </p>
+
+
+      </div>
+    </div>
+        <%end%>
+  </div>
+</div>

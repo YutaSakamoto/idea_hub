@@ -1,0 +1,32 @@
+<div class="topic-show-wrapper">
+  <div class="container-common">
+    <div class='row'>
+      <div class='col-md-6 col-md-offset-3'>
+        <h3>
+        <%= @topic.image %>
+        </h3>
+        <h2>
+        <%= @topic.title %>
+        </h2>
+        <p>
+        <%= @topic.description %>
+        </p>
+
+        <%= link_to @user.name, user_path %>
+
+         <%= link_to favorites_path, method: :post do %>
+         <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+         <%end%>
+
+        <%= link_to comments_new_path do %>
+         <%= image_tag 'icons/comment.png' , class:'topic-index-icon'%>
+        <%end%>
+
+        <h6>
+        <%= @topic.created_at %>
+      </h6>
+
+      </div>
+    </div>
+  </div>
+</div>

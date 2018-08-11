@@ -1,0 +1,20 @@
+<div class="topic-index-wrapper">
+  <div class="container-common">
+    <% @comment_topics.each do |comment| %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <div class="topic-index-single">
+            <h2 class="topic-author">
+              <%= comment.user.name %>
+            </h2>
+
+
+            <p class="topic-text">
+              <%= comment.text %>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

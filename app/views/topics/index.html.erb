@@ -1,0 +1,33 @@
+<div class="topic-index-wrapper">
+  <div class="container-common">
+    <% @topics.each do |topic| %>
+     <div class="row">
+       <div class="col-md-6 col-md-offset-3">
+           <h2 class="topic-author">
+             <%= link_to topic.user.name, users_path %>
+           </h2>
+
+           <h3 class="topic-title">
+             <%= topic.title %>
+           </h3>
+           <p class="topic-text">
+             <%= link_to topic.description, topic_path(topic.id) %>
+           </p>
+
+          <% if !topic.favorite_users.include?(current_user) %>
+           <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
+           <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
+           <%end%>
+          <%end%>
+
+
+           <%= link_to comments_new_path(topic_id: topic.id), method: :get do%>
+           <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+          <%end%>
+
+         </div>
+       </div>
+     </div>
+    <%end%>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="collection-show-wrapper">
+  <div class="container-common">
+    <div class='row'>
+      <div class='col-md-6 col-md-offset-3'>
+        <h3>
+        <%= @collection.image %>
+        </h3>
+        <h2>
+        <%= @collection.title %>
+        </h2>
+        <p>
+        <%= @collection.text %>
+        </p>
+
+        <%= link_to @user.name, user_path %>
+
+        <%= link_to favorites_path do %>
+         <%= image_tag 'icons/heart-black.png', class:'topic-index-icon' %>
+        <%end%>
+
+        <%= link_to comments_new_path do %>
+         <%= image_tag 'icons/comment.png' , class:'topic-index-icon'%>
+        <%end%>
+
+        <h6>
+        <%= @collection.created_at %>
+      </h6>
+
+      </div>
+    </div>
+  </div>
+</div>
